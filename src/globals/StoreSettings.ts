@@ -53,6 +53,17 @@ export const StoreSettings: GlobalConfig = {
           ],
         },
         {
+          label: 'Textos de ajuda',
+          fields: [
+            {
+              name: 'returnsPolicy',
+              label: 'Trocas e devoluções',
+              type: 'textarea',
+              admin: { description: 'Aparece em todas as páginas de produto e na página de ajuda.' },
+            },
+          ],
+        },
+        {
           label: 'Página inicial',
           fields: [
             {

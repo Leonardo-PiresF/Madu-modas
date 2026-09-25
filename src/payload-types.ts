@@ -651,6 +651,10 @@ export interface StoreSetting {
   freeShippingFrom?: number | null;
   localDeliveryFee?: number | null;
   /**
+   * Aparece em todas as páginas de produto e na página de ajuda.
+   */
+  returnsPolicy?: string | null;
+  /**
    * Oito closes para as casas da bandeja (o logo fica sempre no meio). Cada uma pode levar para uma página.
    */
   heroTiles?:
@@ -677,6 +681,7 @@ export interface StoreSettingsSelect<T extends boolean = true> {
   maxInstallments?: T;
   freeShippingFrom?: T;
   localDeliveryFee?: T;
+  returnsPolicy?: T;
   heroTiles?:
     | T
     | {

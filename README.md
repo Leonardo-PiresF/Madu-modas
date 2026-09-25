@@ -11,7 +11,7 @@ Site da Madu (moda, semijoias, calçados e body splash, Paulo Afonso, BA), com p
    - `PAYLOAD_SECRET` com uma frase longa qualquer
 4. **Instalar e subir:**
    ```bash
-   npm install
+   npm install --legacy-peer-deps
    npm run seed        # cria as categorias
    npm run seed:demo   # opcional: produtos de exemplo
    npm run dev
@@ -21,9 +21,12 @@ Site da Madu (moda, semijoias, calçados e body splash, Paulo Afonso, BA), com p
 ## O que já está pronto
 - Painel em português: Produtos (com tamanhos, cores e estoque por variação), Categorias e subcategorias, Fotos, Pedidos, Equipe e Dados da loja
 - Página inicial completa (bandeja, categorias, novidades, estojo da semana, sobre, entrega/pagamento/ajuda), no computador e no celular
+- Lista de categoria com subcategorias, filtros (tamanho, cor, preço), ordenação e "ver mais"; páginas /categoria/todas e /novidades
+- Página de produto com galeria, cores, tamanhos com estoque, aviso de últimas peças, "Combina com", barra fixa no celular e transição da foto
+- Sacola guardada no navegador (contador no cabeçalho)
 
 ## Próximas etapas
-1. Lista de categoria, página de produto, sacola e finalizar compra
+1. Página da sacola e finalizar compra
 2. Meio de pagamento (a definir) e cálculo de frete
 3. Publicação na Vercel com o domínio da loja
 

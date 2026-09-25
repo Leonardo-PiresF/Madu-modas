@@ -1,7 +1,9 @@
 import Link from 'next/link'
 import type { Category } from '@/payload-types'
+import { CartCount } from './CartCount'
+import { HeaderNav } from './HeaderNav'
 
-export function SiteHeader({ categories, current }: { categories: Category[]; current?: string }) {
+export function SiteHeader({ categories }: { categories: Category[] }) {
   return (
     <>
       <p className="topbar">
@@ -25,30 +27,21 @@ export function SiteHeader({ categories, current }: { categories: Category[]; cu
           <img src="/brand/madu-logo-principal-rosa.svg" alt="Madu" width={104} height={52} />
         </Link>
 
-        <nav aria-label="Categorias" className="header__nav">
-          {categories.map((c) => (
-            <Link
-              key={c.id}
-              href={`/categoria/${c.slug}`}
-              aria-current={current === c.slug ? 'page' : undefined}
-            >
-              {c.name}
-            </Link>
-          ))}
-        </nav>
+        <HeaderNav items={categories} />
 
         <div className="header__actions">
           <Link href="/busca" className="header__text-link">
             Buscar
           </Link>
           <Link href="/sacola" className="header__text-link">
-            Sacola (<span data-cart-count>0</span>)
+            Sacola (<CartCount variant="text" />)
           </Link>
           <Link href="/sacola" className="header__icon header__bag" aria-label="Sacola">
             <svg width="20" height="22" viewBox="0 0 20 22" aria-hidden="true">
               <path d="M2 7h16l-1.2 14H3.2z" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
               <path d="M6.5 7V5a3.5 3.5 0 0 1 7 0v2" fill="none" stroke="currentColor" strokeWidth="1.4" />
             </svg>
+            <CartCount variant="badge" />
           </Link>
         </div>
       </header>

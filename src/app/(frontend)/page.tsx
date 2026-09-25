@@ -158,7 +158,12 @@ export default async function HomePage() {
           </div>
           <div className="grid grid--four">
             {estojo.map((p) => (
-              <ProductCell key={p.id} product={p} sizes="(max-width: 900px) 45vw, 200px" />
+              <ProductCell
+                key={p.id}
+                product={p}
+                sizes="(max-width: 900px) 45vw, 200px"
+                morph={!novidades.some((n) => n.id === p.id)}
+              />
             ))}
           </div>
         </section>
